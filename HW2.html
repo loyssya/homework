@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang=ru>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW2</title>
+</head>
+
+<body>
+    <script>
+        document.write("Задание 2" + "<hr>");
+        // let a = +prompt("Введите число А", "0");
+        // let b = +prompt("Введите число В, В>A", "1");
+        let a = 1;
+        let b = 10;
+        let sum = 0;
+        while (a < b) {
+            if (a < b ) {
+                sum += a;
+                
+            }
+            if (a % 2 !== 0) {
+                document.write("Нечетное число=" + a + "<br>")
+            }
+            a++;
+        }
+        document.write("Сумма=" + sum + "<hr>");
+
+        document.write("Задание 3" + "<hr>");
+
+        let counter = +prompt("Введите количетво товаров:", "0");
+        let d = 1;
+        document.write("Количество возможных вариантов доставки товара:" );
+        do {
+            if (counter == 0) {
+                d = 1;
+                break;
+            }
+
+            d *= counter;
+            counter--;
+
+        }
+        while (counter > 0);
+        document.write(d + "<hr>");
+
+        document.write("Задание 4" + "<hr>");
+
+        document.write("Прямоугольник" + "<br>" + "<br>");
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 10; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        document.write("<hr>" + "Прямоугольный треугольник" + "<br>");
+        for (let i = 0; i < 8; i++) {
+            for (let j = 0; j < i; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        document.write("<hr>" + "Равносторонний треугольник" + "<br>");
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 10; j++) {
+                if (j < 5 - i || j > 5 + i) {
+                    document.write('&nbsp&nbsp');
+                } else {
+                    document.write("*");
+                }
+            }
+            document.write("<br>");
+        }
+        document.write("<hr>" + "Ромб" + "<br>");
+        for (let i = 0; i < 4; i++) {
+            for (let j = 0; j < 15; j++) {
+                if (j < 4 - i || j > 14 - i) {
+                    document.write('&nbsp&nbsp&nbsp')
+                } else {
+                    document.write("*");
+                }
+            }
+            document.write("<br>");
+        }
+
+    </script>
+
+
+</body>
+
+</html>
