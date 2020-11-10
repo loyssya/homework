@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang=ru>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW3</title>
+</head>
+
+<body>
+    <script>
+        document.write("Задание 2" + "<hr>");
+        let a = +prompt("Введите размерность массива:", "1");
+        let n = [];
+
+        for (let i = 0; i < a; i++) {
+            n.push(Math.floor(Math.random() * 100));
+
+        }
+        document.write("Массив = [" + n + "]" + "<br>");
+        let min = Math.min.apply(null, n);
+        document.write("<br>" + "Минимальное значение = " + min + "<br>");
+        let max = Math.max.apply(null, n);
+        document.write("<br>" + "Максимальное значение = " + max + "<br>");
+        let sum = n.reduce((sum, current) => sum + current, 0);
+        document.write("<br>" + "Сумма всех значений = " + sum + "<br>");
+        let avg = sum / a;
+        document.write("<br>" + "Cреднее арифметическое = " + avg + "<br>");
+        for (var i = 0; i < n.length; i++) {
+            if (n[i] % 2 !== 0) {
+                document.write("<br>" + "Нечетное число = " + n[i] + "<br>");
+            }
+        }
+
+        document.write("<hr>" + "Задание 3" + "<hr>");
+
+        let mat = new Array(5);
+        for (let i = 0; i < mat.length; i++) {
+            let m = new Array(5);
+            for (let j = 0; j < m.length; j++) {
+                m[j] = (Math.floor(Math.random() * 100) - 50);
+                if(i==j && m[j]<0){
+                    m[j]=0;
+                }
+                if(i==j && m[j]>0){
+                    m[j]=1;
+                }
+            }
+            mat[i] = m;
+            
+        }
+        document.write(mat.join('<br>'));
+    </script>
+</body>
+
+</html>
