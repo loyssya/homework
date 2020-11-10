@@ -38,17 +38,33 @@
             let m = new Array(5);
             for (let j = 0; j < m.length; j++) {
                 m[j] = (Math.floor(Math.random() * 100) - 50);
-                if(i==j && m[j]<0){
-                    m[j]=0;
+                if (i == j && m[j] < 0) {
+                    m[j] = 0;
                 }
-                if(i==j && m[j]>0){
-                    m[j]=1;
+                if (i == j && m[j] > 0) {
+                    m[j] = 1;
                 }
             }
             mat[i] = m;
-            
+
         }
         document.write(mat.join('<br>'));
+        document.write("<hr>" + "Доп. задание" + "<hr>");
+        let arr = +prompt("Введите размерность массива 2:", "1");
+        let mass = [];
+        for (let i = 0; i < arr; i++) {
+            mass.push(Math.floor(Math.random() * 100));
+
+        }
+        document.write("Массив 2 = [" + mass + "]" + "<br>");
+        document.write("Массив 2 = [");
+        for (j = arr - 1; j >= 0; j--) {
+            document.write(mass[j]);
+            if (j != 0) {
+                document.write(",")
+            }
+        }
+        document.write("]" + "<br>");
     </script>
 </body>
 
