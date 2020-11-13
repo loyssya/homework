@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="RU">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW5</title>
+</head>
+
+<body>
+    <script>
+        document.write("Задание 1" + "<hr>");
+        let Document = {
+            header: "",
+            body: "",
+            footer: "",
+            date: "",
+            application: {
+                header: {},
+                body: {},
+                footer: {},
+                date: {},
+
+            },
+            docWr: function () {
+                Document.header = prompt("Введите заголовок вашей статьи:");
+                Document.body = prompt("Введите текст вашей статьи:");
+                Document.footer = prompt("Введите заключение вашей статьи:");
+                Document.data = new Date();
+
+            },
+            docAn: function () {
+                document.write("<h1 align=center>" + Document.header + "</h1>" + "<br>");
+                document.write("<h4 align=center>" + Document.body + "</h4>" + "<br>");
+                document.write("<h4 align=center>" + Document.footer + "</h4>" + "<br>");
+                document.write("<h5 align=right>" + Document.data + "</h5>");
+            }
+
+        }
+        Document.docWr();
+        Document.docAn();
+
+        document.write("<hr>" + "Доп. задание" + "<hr>");
+        let Manager = {
+            firstName: "",
+            lastName: "",
+            age: ""
+        }
+
+        let Secretary = new Object()
+        Secretary.firstName = function () {
+            document.write("First Name"+"<br>");
+        }
+        Secretary.lastName = function () {
+            document.write("Last Name"+"<br>");
+        }
+        Secretary.age = function () {
+            document.write("Age"+"<br>");
+
+        }
+        Secretary.firstName ();
+        Secretary.lastName();
+        Secretary.age();
+
+    </script>
+</body>
+
+</html>
