@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="RU">
+
+<head>
+    <meta charset="UTF-8">
+    <title>5</title>
+</head>
+
+<body>
+    <script>
+        const arr1 = [2, 4, 6, 8, 10];
+        const arr2 = [2, 4, 6, 8, 9, 10];
+        let result = false;
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] % 2 == 0) {
+                result = false;
+            } else {
+                result = true;
+                break;
+            }
+        }
+        console.log(result);
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr2[j] % 2 == 0) {
+                result = false;
+            } else {
+                result = true;
+                break;
+            }
+        }
+        console.log(result);
+
+    </script>
+</body>
+
+</html>

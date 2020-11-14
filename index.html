@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="RU">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+</head>
+
+<body>
+    <script>
+        time = +prompt("какое время? ");
+ 
+
+
+        if (time >= 5 && time < 12) {
+            document.write("Доброе утро!");
+        } else if (time >= 12 && time < 18) {
+            document.write("Добрый день!");
+        } else if (time >= 18 && time < 24) {
+            document.write("Добрый вечер!");
+        } else if (time >= 0 && time < 5) {
+            document.write("Доброй ночи!");
+        } else if (time > 24 || time < 0) {
+            document.write("Вы ввели неверное время, в сутках 24 часа");
+        }
+
+
+
+    </script>
+</body>
+
+</html>
