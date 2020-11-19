@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="RU">
+
+<head>
+    <meta charset="UTF-8">
+    <title>tur</title>
+</head>
+
+<body>
+    <!-- Написать функцию с 3 аргументами: количество людей в поездке, 
+    количество дней (по умолчанию - 7 дней), страна путешествия 
+    (Египет, Турция, Болгария);
+   В зависимости от страны - вычисляется за один день сумма.
+   Пользователь при покупке свыше 10 дней - получает скидку в 10%
+   меньше 5 дней -путевку взять нельзя - выдает ошибку. Путевку на 
+   0 человек взять нельзя. Результат должен выводиться в тело документа.
+    Prompt, confirm -использовать нельзя. -->
+    <style>
+        body {
+            display: grid;
+            justify-content: center;
+        }
+
+        input {
+            margin: 3px;
+            text-align: center;
+            border-radius: 5px;
+            outline: none;
+
+        }
+
+        input[type="button"] {
+            border: none;
+            height: 30px;
+            color: white;
+            background-color: #555;
+        }
+
+        input[type="button"]:hover {
+            background-color: rgb(46, 114, 12);
+            color: white;
+        }
+
+        .title {
+            font-size: 20px;
+            margin: 6px;
+        }
+
+        input[type="radio"] {
+            margin: 7px;
+
+        }
+
+        .ask {
+            margin: 5px;
+            font-size: 15px;
+            text-align: center;
+        }
+    </style>
+
+    <span class="title">Сколько стоит путешествие ?</span>
+    <section>
+        <span>Египет</span>
+        <input type="radio" id="country1" name="country">
+        <span>Турция</span>
+        <input type="radio" id="country2" name="country">
+        <span>Болгария</span>
+        <input type="radio" id="country3" name="country">
+    </section>
+    <span class="ask">Какое будет количество людей?</span>
+    <input type="text" id="people">
+    <span class="ask">Сколько дней вы хотите отдыхать?</span>
+    <input type="text" id="days">
+    <input type="button" id="ok" value="Проверить стоимость путевки">
+    <span class="ask">Стоимость за одни сутки</span>
+    <input type="text" id="result">
+    <span class="ask">Стоимость путевки</span>
+    <input type="text" id="resultMonth">
+
+    <script>
+        function tur() {
+            let p = +document.getElementById("people").value,
+                d = +document.getElementById("days").value,
+                c = [1500, 2500, 2000];
+            let sum = 1;
+            let i;
+
+            if (document.getElementById("country1").checked) {
+                i = 0;
+            } else if (document.getElementById("country2").checked) {
+                i = 1;
+            } else if (document.getElementById("country3").checked) {
+                i = 2;
+            }
+            sum = c[i] * p * d;
+
+            if (p < 0) {
+                document.getElementById("resultMonth").value = "ошибка";
+                document.getElementById("result").value = "ошибка";
+                return;
+            }
+            if (d < 5) {
+                document.getElementById("resultMonth").value = "ошибка";
+                document.getElementById("result").value = "ошибка";
+                return;
+            } else if (d >= 10) {
+                sum = sum - sum * 0.1;
+            }
+
+            document.getElementById("result").value = c[i]*p
+            document.getElementById("resultMonth").value = sum;
+        }
+        document.getElementById("ok").onclick = tur;
+    </script>
+</body>
+
+</html>
