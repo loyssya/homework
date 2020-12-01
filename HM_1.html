@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW1</title>
+</head>
+
+<body>
+    <script>
+        //Задание 1
+        function Kit(x, y) {
+            this.x = x;
+            this.y = y;
+            this.z = function () {
+                return this.x * this.y;
+            }
+        }
+        Kit.b = 10;
+        Kit.c = function () {
+            return 25;
+        }
+        let a = new Kit(10, 20);
+        console.log(a);
+
+        //Задание 2
+        function Human(age) {
+            this.age = age;
+        }
+        let arr = [new Human(20), new Human(67), new Human(38), new Human(91), new Human(15)];
+
+        function sort(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i; j < arr.length; j++) {
+                    if (arr[i].age > arr[j].age) {
+                        let temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+        sort(arr);
+        console.log(arr);
+
+        //Задание 3
+        function Humen1(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+
+            this.fullName = function () {
+                document.write("My name is " + firstName + " " + lastName + "." + " ");
+            }
+            this.fullName();
+            Humen1.lifespan(age);
+        }
+        Humen1.minChild = 0;
+        Humen1.maxChild = 17;
+        Humen1.minYoung = 18;
+        Humen1.maxYoung = 35;
+        Humen1.minAdult = 36;
+        Humen1.maxAdult = 60;
+        Humen1.minOld = 60;
+        Humen1.maxOld = 120;
+        Humen1.lifespan = function (age) {
+            if (Humen1.minChild <= age && age <= Humen1.maxChild) {
+                document.write("I am child" + "<br>");
+            } else if (Humen1.minYoung <= age && age <= Humen1.maxYoung) {
+                document.write("I am young" + "<br>");
+            } else if (Humen1.minAdult <= age && age <= Humen1.maxAdult) {
+                document.write("I am adult" + "<br>");
+            } else if (Humen1.minOld <= age && age <= Humen1.maxOld) {
+                document.write("I am old" + "<br>");
+            } else {
+                document.write("Don't live so many" + "<br>")
+            }
+        }
+
+
+        let person1 = new Humen1("Ivan", "Bak", 10);
+        let person2 = new Humen1("Inna", "Lom", 130);
+        let person3 = new Humen1("Borya", "Done", 45);
+        document.write("<br>");
+        //Задание 4
+
+        function Groats(weight, price) {
+            this.weight = weight;
+            this.price = price;
+
+        }
+
+        Groats.prototype.toString = function () {
+            return "Вес крупы: " + this.weight + " кг." + " Цена крупы: " + this.price + " грн.";
+        }
+        let groats1 = new Groats(1, 25);
+        let groats2 = new Groats(3, 100);
+        document.write(groats1 + "<br>");
+        document.write(groats2 + "<br>");
+
+    </script>
+
+</body>
+
+</html>
