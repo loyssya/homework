@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW2</title>
+</head>
+
+<body>
+    <script>
+        // Задание 1 
+        class Human {
+            constructor(age) {
+                this.age = age;
+            }
+        }
+        let arr = [new Human(25), new Human(43), new Human(80), new Human(10)];
+
+        function sort(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i; j < arr.length; j++) {
+                    if (arr[i].age > arr[j].age) {
+                        let temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+        }
+        sort(arr);
+        console.log(arr);
+
+
+        //Задание 2 
+        class Human1 {
+            constructor(firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+            speak() {
+                document.write("Привет! Меня зовут " + this.firstName + " " + this.lastName + "." + " Мне " + this.age + " лет."+"<br>");
+
+            }
+        }
+
+        class Student extends Human1 {
+            constructor(firstName, lastName, age, education, university) {
+                super(firstName, lastName, age)
+                this.education = education;
+                this.university = university;
+            }
+            speak() {
+                super.speak()
+                document.write("Я учился(лась) в " + this.university + "." + " На кафедре " + this.education + "."+"<br>");
+
+            }
+        }
+        class Worker extends Human1 {
+            constructor(firstName, lastName, age, specialty, experience) {
+                super(firstName, lastName, age)
+                this.specialty = specialty;
+                this.experience = experience;
+            }
+            speak() {
+                super.speak()
+                document.write("Я работаю " + this.specialty + "." + "У меня " + this.experience + " лет опыта работы."+"<br>");
+            }
+        }
+        class Manager extends Human1 {
+            constructor(firstName, lastName, age, departament, team) {
+                super(firstName, lastName, age)
+                this.team = team;
+                this.departament = departament;
+
+            }
+            speak() {
+                super.speak()
+                document.write("Я менеджер в отделе  " + this.departament + "." + "У меня " + this.team + " человек в команде."+"<br>");
+            }
+        }
+
+        let Artyom = new Human1("Артём","Лососев","25");
+        let Masha = new Student("Маша","Пупкина","30","маркетинга","НГУ");
+        let Gennady = new Worker("Гена","Крокодил","45","музыкантом","5");
+        let Dobrynya = new Manager("Добрыня","Добрынич","38","безопасности","3");
+
+        Artyom.speak();
+        Masha.speak();
+        Gennady.speak();
+        Dobrynya.speak();
+
+
+        
+    </script>
+
+</body>
+
+</html>
