@@ -6,13 +6,14 @@
     <title>HW3_2</title>
 
     <script type="text/javascript">
-        let arr=[]
+        
             function Add() {
                 let parent = document.getElementById("parent");
                 let childP = document.createElement("p");
+                let count  = document.getElementsByTagName('p').length ;
                 
-                    if (childP.length < 10) {
-                        parent.removeChild(childP);
+                    if (count > 9) {
+                        parent.innerHTML = '';
                         return;
                      } else {
                         childP.innerHTML = "НОВЫЙ ЭЛЕМЕНТ";
@@ -26,8 +27,11 @@
     </script>
 </head>
 
-<body id="parent">
+<body >
+   
     <input type="button" onclick="Add()" name="p" value="Нажми меня" />
+    
+    <div id="parent"></div>
 
 </body>
 
