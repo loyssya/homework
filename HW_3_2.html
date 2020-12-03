@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW3_2</title>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            function Add() {
+                let parent = document.getElementById("parent");
+                let childP = document.createElement("p");
+                for (i = 0; i > 10; i++) {
+                    // if (childP[i] > 10) {
+                    //     parent.removeChild(childP);
+                    // } else {
+                        childP[i].innerHTML = "НОВЫЙ ЭЛЕМЕНТ";
+                        parent.appendChild(childP[i]);
+                    // }
+                }
+
+            }
+        }
+
+    </script>
+</head>
+
+<body id="parent">
+    <input type="button" onclick="Add()" name="p" value="Нажми меня" />
+
+</body>
+
+</html>
