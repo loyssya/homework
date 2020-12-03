@@ -6,21 +6,22 @@
     <title>HW3_2</title>
 
     <script type="text/javascript">
-        window.onload = function () {
+        let arr=[]
             function Add() {
                 let parent = document.getElementById("parent");
                 let childP = document.createElement("p");
-                for (i = 0; i > 10; i++) {
-                    // if (childP[i] > 10) {
-                    //     parent.removeChild(childP);
-                    // } else {
-                        childP[i].innerHTML = "НОВЫЙ ЭЛЕМЕНТ";
-                        parent.appendChild(childP[i]);
-                    // }
-                }
+                
+                    if (childP.length < 10) {
+                        parent.removeChild(childP);
+                        return;
+                     } else {
+                        childP.innerHTML = "НОВЫЙ ЭЛЕМЕНТ";
+                        parent.appendChild(childP);
+                    }
+                
 
             }
-        }
+       
 
     </script>
 </head>
