@@ -1,0 +1,25 @@
+.hide {
+    display: none;
+
+}
+
+.active {
+    display: flex;
+
+}
+
+#head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+input {
+    text-align: center;
+}
+
+#check {
+    margin: 5px;
+}

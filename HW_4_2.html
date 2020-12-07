@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW4_2</title>
+    <link rel="stylesheet" href="HW_4_2.css">
+</head>
+
+<body>
+    <div id="head">
+        <p>Cтраница авторизации</p>
+        <input type="text" id="login">
+        <input type="password" id="pass">
+        <div id="check">
+            <span>Запомнить меня</span>
+            <input type="checkbox">
+        </div>
+        <input type="button" id="entry" value="Вход">
+        <span id="good" class="hide">Вы авторизированы</span>
+        <span id="bad" class="hide">Вы не заполнили поля логин и пароль</span>
+        <span id="notCorrect" class="hide" >Вы ввели некорректный логин или пароль</span>
+    </div>
+    <script>
+        function save() {
+
+            var login = document.getElementById("login"),
+                pass = document.getElementById("pass"),
+                good = document.getElementById("good"),
+                bad = document.getElementById("bad"),
+                notCorrect = document.getElementById("notCorrect");
+
+            good.className = "hide";
+            bad.className = "hide";
+            notCorrect.className="hide";
+
+
+            if (login.value == "admin" && pass.value == "12345") {
+                login.style.backgroundColor = "#00800491";
+                login.style.color = "white";
+                pass.style.backgroundColor = "#00800491";
+                pass.style.color = "white";
+                good.className = "active";
+
+
+            } else if (login.value == "" && pass.value == "") {
+                login.style.backgroundColor = "#ff8a8a99";
+                pass.style.backgroundColor = "#ff8a8a99";
+                bad.className = "active";
+                login.style.color = "black";
+                pass.style.color = "black";
+            }else {
+                login.style.backgroundColor = "#ff8a8a99";
+                pass.style.backgroundColor = "#ff8a8a99";
+                notCorrect.className = "active";
+                login.style.color = "black";
+                pass.style.color = "black";
+            }
+        }
+        document.getElementById("entry").onclick = save;
+    </script>
+</body>
+
+</html>

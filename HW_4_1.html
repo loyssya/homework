@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW4_1</title>
+</head>
+
+<body>
+    <style>
+        body,
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+
+        }
+
+        input {
+            width: 395px;
+            height: 20px;
+            font-size: 16px;
+            font-weight: bolder;
+            text-align: center;
+            border: none;
+            overflow: hidden;
+            outline: none;
+            margin: 5px;
+            border-radius: 15px;
+        }
+
+        input[type="button"] {
+            width: 300px;
+            height: 50px;
+        }
+
+        .hide {
+            display: none;
+
+        }
+
+        .active {
+            display: flex;
+            color: white;
+            height: 40px;
+        }
+
+        span {
+            font-family: 'Helvetica';
+            font-weight: bolder;
+        }
+    </style>
+    <div>
+        <span>Введите цифру от 1 до 100, чтобы угадать значение</span>
+        <input type="text" id="text" value="1">
+        <input type="button" id="ok" value="Проверить">
+        <input type="text" id="result1" class="hide" value="Загаданное значение меньше введенного вами">
+        <input type="text" id="result2" class="hide" value="Загаданное значение больше введенного вами">
+        <input type="text" id="result3" class="hide" value="Верно">
+        <input type="text" id="notCorrect" class="hide" value="Число некорректно">
+    </div>
+    <script>
+        let namber = Math.floor(Math.random() * 100) + 1;
+        function random() {
+
+            var n = document.getElementById("text").value,
+                correct = document.getElementById("result3"),
+                less = document.getElementById("result1"),
+                more = document.getElementById("result2"),
+                notCorrect = document.getElementById("notCorrect");
+
+            correct.className = "hide";
+            less.className = "hide";
+            more.className = "hide";
+            notCorrect.className = "hide"
+
+            if (n > 100 || n < 0) {
+                notCorrect.className = "active";
+                
+                notCorrect.style.backgroundColor = "#DB4B42";
+            } else if (n == namber) {
+                correct.className = "active";
+                correct.style.backgroundColor = "#13A842"
+            } else if (n > namber) {
+
+                less.className = "active";
+                less.style.backgroundColor = "#F7CC2F";
+            } else if (n < namber) {
+
+                more.className = "active";
+                more.style.backgroundColor = "#F7CC2F";
+            }
+        }
+        document.getElementById("ok").onclick = random;
+
+    </script>
+</body>
+
+</html>

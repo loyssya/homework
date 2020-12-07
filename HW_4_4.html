@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW4_3</title>
+</head>
+
+<body>
+    <style>
+        #div {
+            position: absolute;
+            background-color: cornflowerblue;
+            border-radius: 5px;
+            color: white;
+            margin: 5px;
+            height: 20px;
+            width: 61px;
+            text-align: center;    
+            
+
+
+        }
+        button{
+            border-radius: 5px;
+            width: 60px;
+            height: 20px;
+            text-align: center;
+            background-color: teal;
+            outline: none;
+            overflow: hidden;
+            color: white;
+
+        }
+    </style>
+    <button id="up">Вверх</button>
+    <button id="down">Вниз</button>
+    <button id="left">Влево</button>
+    <button id="right">Вправо</button>
+    <div id="div">Вперед!</div>
+    <script>
+        let x = 0,
+            y = 0;
+
+
+        let up = document.getElementById("up");
+        let down = document.getElementById("down");
+        let left = document.getElementById("left");
+        let right = document.getElementById("right");
+        let div = document.getElementById("div");
+
+        up.onclick = function () {
+
+            div.style.top = y + "px";
+            y -= 100;
+
+        }
+        down.onclick = function () {
+
+            div.style.top = y + "px";
+            y += 100;
+        }
+        left.onclick = function () {
+
+            div.style.left = y + "px";
+            y -= 100;
+
+        }
+        right.onclick = function () {
+
+            div.style.left = y + "px";
+            y += 100;
+        }
+    </script>
+</body>
+
+</html>
