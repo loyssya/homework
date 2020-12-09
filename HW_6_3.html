@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW6_3</title>
+</head>
+
+<body>
+    <style>
+        #go {
+            position: absolute;
+            width: 300 px;
+            height: 75px;
+            background-color: tomato;
+            color: white;
+            border-radius: 15px;
+            font-weight: bolder;
+            border-color: tomato;
+        }
+    </style>
+    <button id="go">ПOЛУЧИТЬ СКИДКУ</button>
+
+    <script>
+        let x = 0;
+        let y = 0;
+        let go = document.getElementById("go");
+        go.addEventListener("mouseover", function () {
+            if (x > window.innerWidth) {
+                x = 0;
+                go.style.left = x + "px";
+
+            } else {
+                go.style.left = x + "px";
+                x += 150;
+            }
+            if (y > window.innerHeight) {
+                y = 0;
+                go.style.left = y + "px";
+
+            } else {
+                go.style.top = y + "px";
+                y += 150;
+            }
+        }, false)
+    </script>
+</body>
+
+</html>

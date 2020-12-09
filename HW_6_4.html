@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW6_4</title>
+</head>
+
+<body>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .active {
+            display: flex;
+        }
+    </style>
+    <p id="save" class="hide">Сохранено</p>
+    <p id="all" class="hide">Выбрано все</p>
+    <p id="saveAll" class="hide">Сохранено все</p>
+    <script>
+        document.addEventListener("keydown", activ);
+
+        function activ(e) {
+            let save = document.getElementById("save"),
+                all = document.getElementById("all"),
+                saveAll = document.getElementById("saveAll");
+
+            save.className = "hide";
+            all.className = "hide";
+            saveAll.className = "hide";
+            console.log(e);
+            if (e.key == "s" && e.ctrlKey == true) {
+                save.className = "active";
+
+            }
+            if (e.key == "a" && e.ctrlKey == true) {
+                all.className = "active";
+
+            }
+            if (e.key == "S" && e.ctrlKey == true && e.shiftKey == true) {
+                saveAll.className = "active";
+
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

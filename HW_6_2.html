@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW6_2</title>
+</head>
+
+<body>
+    <p class="text">Проверка кода</p>
+    <p class="text">Меняет ли он цвет</p>
+    <p class="text">Когда я нажимаю на буквы r, g, b</p>
+    <script>
+        document.addEventListener("keypress", colorP);
+        function colorP(e) {
+            let colP = document.getElementsByClassName("text");
+            for( let i = 0; i< colP.length; i++){
+            if (e.key == "r") {
+               colP[i].style.color = "red";                
+            }
+            if (e.key == "g") {
+                colP[i].style.color = "green";
+            }
+            if (e.key == "b") {
+                colP[i].style.color = "blue";
+            }}
+            
+        }
+    </script>
+</body>
+
+</html>
