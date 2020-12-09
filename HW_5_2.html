@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW5_2</title>
+</head>
+
+<body>
+   
+        <form id="calc">
+            <input type="text" name="oneNamber" id="oneNamber">
+            <input type="text" name="twoNamber" id="twoNamber">
+            <input type="button" name="plus" id="plus"  value="+">
+            <input type="button" name="minus" id="minus"  value="-">
+            <input type="button" name="multi" id="multi"  value="*">
+            <input type="button" name="divde" id="divde"  value="/">
+            <input type="text" name="result" id="result" >
+        </form>
+    
+        <script>
+    
+            let oneNamber = document.getElementById("oneNamber");
+            let twoNamber = document.getElementById("twoNamber");
+            let calc = document.getElementById("calc");
+            
+            calc.oneNamber.addEventListener("change", function(){
+                calc.oneNamber.value = parseInt(calc.oneNamber.value)
+            }, false)
+            calc.twoNamber.addEventListener("change", function(){
+                calc.twoNamber.value = parseInt(calc.twoNamber.value)
+            }, false)
+    
+            calc.plus.addEventListener("click", function () {
+    
+                calc.result.value = parseInt(oneNamber.value) + parseInt(twoNamber.value);
+            }, false)
+            calc.minus.addEventListener("click", function () {
+    
+                calc.result.value = parseInt(oneNamber.value) - parseInt(twoNamber.value);
+            }, false)
+            calc.multi.addEventListener("click", function () {
+    
+                calc.result.value = parseInt(oneNamber.value) * parseInt(twoNamber.value);
+            }, false)
+            calc.divde.addEventListener("click", function () {
+    
+                calc.result.value = parseInt(oneNamber.value) / parseInt(twoNamber.value);
+            }, false)
+    
+        </script>
+ 
+</body>
+
+</html>
