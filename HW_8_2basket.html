@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW8_2basket</title>
+
+</head>
+
+<body>
+    <style>
+           textarea{ width: 134px;
+    height: 68px;
+    resize: none;
+    }
+    </style>
+<textarea id="aboutBasket" readonly></textarea>
+
+    <script>
+        window.onload = function(){
+            aboutBasket.value = localStorage.getItem("about");
+        }
+
+    </script>
+</body>
+
+</html>

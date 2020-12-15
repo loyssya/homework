@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW8_2</title>
+
+</head>
+
+<body>
+
+    <style>
+        textarea {
+            width: 176px;
+            height: 150px;
+            resize: none;
+        }
+    </style>
+    <img src="blouse.jpg" alt="art">
+    <textarea id="about" readonly>
+Кофта
+Аpтикль: 001 
+Цена: 200 грн
+</textarea>
+    <input type="button" id="buy" value="Купить">
+    <input type="button" id="basket" value="Корзина">
+
+    <script>
+        buy.addEventListener("click", function () {
+            let abouts = about.value;
+            localStorage.setItem("about", abouts);
+        }, false);
+
+        basket.addEventListener("click", function () {
+            window.open("./HW_8_2basket.html");
+        }, false);
+    </script>
+</body>
+
+</html>

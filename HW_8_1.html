@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW8_1</title>
+
+</head>
+
+<body>
+    <style>
+
+    </style>
+    <p>Пожалуйста, выберите цвет и размер текста</p>
+    <select id="colors">
+        <option value="#EC8B8B">Красный</option>
+        <option value="#3B3BED">Синий</option>
+        <option value="#2D9E2B">Зеленый</option>
+        <option value="#F1DE12">Желтый</option>
+    </select>
+    <input type="namber" id="text">
+    <input type="button" id="save" value="Сохранить">
+
+    <script>
+
+        window.onload = function () {
+            const color = localStorage.getItem("color");
+            const size = localStorage.getItem("size");
+            if (color) {
+                document.body.style.backgroundColor = color;
+            }
+            if (size) {
+                document.body.style.fontSize = size + "px";
+            }
+        }
+       
+        save.addEventListener("click", function () {
+            const color = colors.value;
+            const size = text.value;
+             if(/^\d{1,4}$/.test(size)){
+            localStorage.setItem("color", color);
+            localStorage.setItem("size", size);
+            document.body.style.fontSize = size + "px";
+            document.body.style.backgroundColor = color;}
+            
+        }, false)
+
+    </script>
+</body>
+
+</html>
