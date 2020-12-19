@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW9_1</title>
+
+</head>
+
+<body>
+    <input type="text" id="numberA">
+    <input type="text" id="numberB">
+    <input type="button" id="button" value="Рассчитать">
+    <input type="text" id="result">
+    <script>
+        let xhr = new XMLHttpRequest();
+        button.addEventListener("click", function () {
+            const a = numberA.value;
+            const b = numberB.value;
+            if (a == "" || b == "") {
+                alert("Одно из полей пустое");
+                return;
+            }
+            if (!/^\d+$/.test(a) || !/^\d+$/.test(b)) {
+                alert("Одно из чисел не является целочисленным");
+                return;
+            }
+
+            xhr.open("POST", "CalcHandler.ashx");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);
+                    document.getElementById("result").value = xhr.responseText;
+
+                }
+            }
+
+            xhr.send(`a=${a}&b=${b}`);
+        }, false)
+    </script>
+</body>
+
+</html>
