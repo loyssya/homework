@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HW1_2&3</title>
+</head>
+
+<body>
+    <style>
+        header {
+            background-image: url(../imgHtml/1.jpg);
+            background-size: cover;
+            background-position: bottom;
+            padding: 272px 0 250px;
+        }
+
+        body {
+            display: block;
+            margin: 0px;
+        }
+
+        .header {
+            max-width: 532px;
+            margin: 0px 134px;
+        }
+
+        .header h1 {
+            font-size: 72px;
+            font-family: Myriad Pro;
+
+        }
+
+        .header p {
+            font-size: 30px;
+            font-family: Myriad Pro;
+
+        }
+
+        .blockTwo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #f3f1ef;
+        }
+
+        .blockTwo img {
+            width: 100%;
+        }
+
+        .blockTwo div {
+            font-size: 36px;
+            font-family: Myriad Pro;
+            margin: 72px 134px;
+            color: #666666;
+        }
+
+        .name {
+            font-size: 24px;
+        }
+
+        .photo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .photo img {
+            width: 100%;
+        }
+
+        .blockThree {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            background-color: #3f729b;
+            color: white;
+        }
+
+        button {
+            border-radius: 19px;
+            border-style: solid;
+            color: white;
+            background-color: transparent;
+            border-color: white;
+            font-size: 18px;
+            font-family: Myriad Pro;
+            width: 200px;
+            height: 40px;
+            outline: none;
+
+        }
+
+
+
+        .blockThree img {
+            width: 100%
+        }
+
+        .blockThree div {
+            margin: auto;
+            width: 65%;
+            padding-left: 16%;
+        }
+
+        .blockThree div {
+
+            font-size: 36px;
+            font-family: Myriad Pro;
+        }
+
+        .blockFour {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            color: white;
+            height: 520px;
+        }
+
+        .green {
+            background-color: #2ebd59;
+            /* padding: 100px; */
+            font-size: 36px;
+            font-family: Myriad Pro;
+            display: flex;
+        }
+
+        .green div {
+            margin: auto;
+            width: 65%;
+            padding-left: 16%;
+        }
+
+
+        .black {
+            background-color: #282b2f;
+            /* padding: 100px; */
+            font-size: 36px;
+            font-family: Myriad Pro;
+            display: flex;
+        }
+
+        .black div {
+            margin: auto;
+            /* margin-top: 100px; */
+            width: 65%;
+            padding-right: 16%;
+        }
+
+        footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            background-color: #212227;
+
+        }
+
+
+        #contact {
+            margin: 80px 30px 80px 190px;
+        }
+
+
+        #follow {
+            margin: 80px 30px 80px 30px;
+        }
+
+        #subscribe {
+            width: 50%;
+            margin: 80px 225px 80px 35px;
+        }
+
+        .nameFooter {
+            font-size: 18px;
+            font-family: Myriad Pro;
+            color: white;
+
+        }
+
+        footer p {
+            color: #919191;
+            font-size: 14px;
+
+        }
+
+        .email {
+            width: 460px;
+            max-width: 100%;
+            height: 16px;
+            background-color: #4d4e52;
+            color: #838484;
+            font-size: 14px;
+            font-family: Myriad Pro;
+            border: none;
+            padding: 20px;
+        }
+
+
+
+        .social {
+            display: grid;
+            grid-template-columns: 1fr 10fr;
+            align-items: center;
+        }
+
+        .social p {
+            margin: 2px;
+        }
+
+        .social a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .blockTwo {
+                grid-template-columns: 1fr;
+            }
+
+            .blockTwo div {
+                margin: 30px;
+            }
+
+            #subscribe {
+                width: auto;
+                grid-column: 1/3;
+                margin: 30px;
+
+            }
+
+            .header {
+                margin: 0px 45px;
+            }
+
+            headr {
+                padding: 25px 0 25px;
+            }
+
+            .photo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blockThree div {
+                margin: 30px;
+                width: auto;
+                padding-left: unset;
+            }
+
+            .blockThree {
+                grid-template-columns: 1fr;
+            }
+
+            button {
+                font-size: 30px;
+                width: 100%;
+                height: 75px;
+            }
+
+            .blockFour {
+                width: auto;
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .green div {
+
+                width: auto;
+                padding-left: unset;
+                margin: 30px;
+            }
+
+            .black div {
+
+                width: auto;
+                padding-right: unset;
+                margin: 30px;
+            }
+
+            footer {
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            #contact,#follow {
+                margin: 15px;
+            }
+
+            
+
+            footer p {
+                font-size: 20px;
+            }
+
+            .email {
+                height: 60px;
+                font-size: 20px;
+                width: 80%;
+
+            }
+        }
+    </style>
+    <header>
+        <div class="header">
+            <h1>Amazing Dude.
+                Amazing Life.</h1>
+            <p>Welcome to the personal site of <b>John Doe.</b>
+                A professional skier and a musician.</p>
+        </div>
+    </header>
+    <main>
+        <section class="blockTwo">
+            <img src="../imgHtml/2.jpg" alt="two">
+            <div>
+                <p class="name">SED FAUCIBUS QUIS</p>
+                <p>Fusce bibendum luctus massa,
+                    ut tincidunt lectus tincidunt in.
+                    Nulla tristique ipsum vitae lacus
+                    ullamcorper, at dictum nunc
+                    scelerisque.</p>
+            </div>
+        </section>
+        <div class="photo">
+            <img src="../imgHtml/3.png" alt="three">
+            <img src="../imgHtml/4.png" alt="four">
+            <img src="../imgHtml/5.png" alt="five">
+            <img src="../imgHtml/6.png" alt="six">
+        </div>
+        <div class="blockThree">
+            <div>
+                <p class="name">INSTAGRAM</p>
+                <p>Etiam lacus dolor, tincidunt vitae
+                    nisi in, vulputate placerat odio.
+                    Pellentesque iaculis.</p>
+                <a href="#"><button>VIEW ON INSTAGRAM</button></a>
+            </div>
+            <img src="../imgHtml/7.png" alt="seven">
+        </div>
+
+        <div class="blockFour">
+            <div class="green">
+                <div>
+                    <p class="name">SPOTIFY</p>
+                    <p>Follow me, stream and add
+                        my songs to your Spotify playlist.</p>
+                    <a href="#"><button>FOLLOW ON SPOTIFY</button></a>
+                </div>
+            </div>
+            <div class="black">
+                <div>
+                    <p class="name">ITUNES</p>
+                    <p>Buy and download my songs
+                        from iTunes.</p>
+                    <a href="#"><button>BUY FROM ITUNES</button></a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div id="contact">
+            <p class="nameFooter">CONTACT ME</p>
+            <p>1242 Crestview Terrace<br>
+                Artesia Wells, TX 78001</p>
+            <p>Phone: 830-676-7974
+                <br>Email: halo@sitename.com
+            </p>
+        </div>
+
+        <div id="follow">
+            <p class="nameFooter">FOLLOW ME ON</p>
+
+            <section class="social">
+                <a href="#"> <img src="../imgHtml/9.png" alt="net"></a>
+                <a href="#">
+                    <p>FACEBOOK</p>
+                </a>
+            </section>
+            <section class="social">
+                <a href="#"><img src="../imgHtml/10.png" alt="net"></a>
+                <a href="#">
+                    <p>TWITTER</p>
+                </a>
+            </section>
+            <section class="social">
+                <a href="#"><img src="../imgHtml/11.png" alt="net"></a>
+                <a href="#">
+                    <p>INSTAGRAM</p>
+                </a>
+            </section>
+            <section class="social">
+                <a href="#"><img src="../imgHtml/12.png" alt="net"></a>
+                <a href="#">
+                    <p>SPOTIFY</p>
+                </a>
+            </section>
+
+        </div>
+        <div id="subscribe">
+            <p class="nameFooter">SUBSCRIBE</p>
+            <p>Duis sollicitudin facilisis dui ac aliquet. Phasellus tempor sollicitudin augue,
+                id hendrerit enim gravida non. Integer consequat vel
+                arcu quis dictum. Vestibulum viverra commodo nunc eu pellentesque.</p>
+            <input type="email" name="email" class="email" placeholder="  ENTER YOUR EMAIL ADDRESS">
+        </div>
+    </footer>
+</body>
+
+</html>
