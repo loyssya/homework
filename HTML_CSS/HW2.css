@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+}
+
+.menu {
+    overflow: hidden;
+    background-color: #486371;
+    margin: 0px;
+}
+
+.menu a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+    font-size: 30px;
+    list-style-type: none;
+    margin-left: 4em;
+}
+
+
+.menu a:hover {
+    background-color: #ddd;
+    color: #486371;
+}
+
+
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #99C6DD;
+    color: white;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header img {
+    padding: 1em 0em 1em 8em;
+}
+
+.queistion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em 0em 0em 0em;
+    font-size: 40px;
+    font-family: Helvetica;
+}
+
+.queistion p {
+    margin: 0px;
+    text-align: center;
+}
+
+.queistion a {
+    color: rgb(255, 255, 255);
+
+}
+
+.hotel img {
+    grid-area: img;
+}
+
+.name {
+    grid-area: name;
+    font-size: 25px;
+    color: #486371;
+    font-family: Helvetica;
+    font-weight: bold;
+    margin: 0px;
+
+}
+
+.avg {
+    grid-area: avg;
+    color: #486371;
+    font-family: Helvetica;
+    font-weight: bold;
+    margin: 0px;
+    padding: 5px 0px 5px 0px;
+}
+
+.cost {
+    grid-area: cost;
+    padding: 5px 0px 5px 0px;
+
+
+}
+
+.cost p {
+    margin: 0px;
+    text-align: right;
+    font-weight: bold;
+
+}
+
+
+.hotel button {
+    grid-area: button;
+}
+
+.currency {
+    grid-area: currency;
+    padding: 5px 0px 5px 0px;
+
+
+}
+
+.currency p {
+    margin: 0px;
+    font-weight: bold;
+
+}
+
+.star {
+    display: flex;
+    grid-area: star;
+    font-size: 25px;
+    color: #486371;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.star p {
+    margin: 0px;
+}
+
+article {
+    grid-area: article;
+    height: 120px;
+}
+
+#hotels {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.hotel {
+    width: 100%;
+    display: grid;
+    padding: 2em;
+    box-sizing: border-box;
+    grid-template-areas:
+        'img img img img'
+        'name name name star'
+        'article article article article'
+        'avg avg cost currency '
+        'button button button button'
+}
+
+.hotel img {
+    width: 100%;
+}
+
+nav img {
+    width: 100%;
+}
+
+button {
+    background-color: #99C6DD;
+    color: white;
+    border-radius: 15px;
+    border: unset;
+    height: 3em;
+    width: 100%;
+    font-size: 20px;
+    outline: none;
+
+}
+
+input {
+    overflow: visible;
+    width: 50%;
+    height: 40px;
+}
+
+footer {
+    background-color: #486371;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 1em;
+    padding: 2em;
+}
+
+.social p {
+    font-size: 20px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+
+.social ul {
+
+    list-style-type: none;
+    padding: 0px;
+}
+
+.social a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.feedback {
+    padding-left: 1em;
+}
+
+section h1 {
+    text-align: center;
+    color: #99C6DD;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 50px;
+
+}
+
+hr {
+    color: #486371;
+    height: 12px;
+}
+
+.feedback {
+    font-size: 20px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+#mapUrl {
+    position: fixed;
+    left: 20%;
+    top: 3vh;
+    width: 60%;
+    height: 94vh;
+}
+
+.hide {
+    display: none;
+}
+
+#mapUrl::after {
+    content: "X";
+    position: absolute;
+    top: 0vh;
+    left: 119vh;
+    border: 3px solid gray;
+    background-color: gray;
+    color: white;
+}

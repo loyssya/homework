@@ -4,10 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HW1_2&3</title>
+    <link rel="stylesheet" href="./HW2.css">
+    <script src="./HW2.js"></script>
+    <title>TripTip</title>
 </head>
-<body>
 
+<body>
+    <header>
+        <a href="#"><img src="../imgHtml/logo.png" alt="logo"></a>
+        <div class="queistion">
+            <p>Возникли вопросы?</p>
+            <a href="tel:+380508749156">380508749156</a>
+            
+        </div>
+    </header>
+    <nav>
+        <ul class="menu">
+            <a href="#">
+                <li>Направления</li>
+            </a>
+            <a href="#">
+                <li>Отели</li>
+            </a>
+            <a href="#">
+                <li>Туры</li>
+            </a>
+            <a href="#">
+                <li>Блог</li>
+            </a>
+            <a href="#">
+                <li>O нас</li>
+            </a>
+        </ul>
+        <img src="../imgHtml/trip.png" alt="trip">
+    </nav>
+    <section>
+        <hr>
+        <h1>ТОП ОТЕЛЕЙ</h1>
+        <hr>
+        <div id="hotels">
+            <template id="templateHotel">
+                <div class="hotel">
+                    <img src="" alt="">
+                    <p itemprop="name" class="name"> </p>
+                    <div class="star">
+                        <p id="numbers"> </p>
+                        <p>*</p>
+                    </div>
+                    <article itemprop="description"> </article>
+                    <p class="avg">средняя стоимость: </p>
+                    <a class="cost" href="#">
+                        <p></p>
+                    </a>
+                    <a class="currency" href="#">
+                        <p> ₴</p>
+                    </a>
+                    <button>Посмотреть на карте</button>
+                </div>
+            </template>
+        </div>
+        <div class="hide" id="mapUrl">
+            <iframe width="100%" height="100%" src=""></iframe>
+        </div>
+    </section>
+    <footer>
+        <div class="feedback">
+            <p>Обратная связь</p>
+            <input type="text" name="text" placeholder="Ваше имя">
+            <br>
+            <input type="email" name="email" placeholder="Ваш e-mail">
+        </div>
+
+        <div class="social">
+            <p>Соц.сети</p>
+            <ul>
+                <a href="#">
+                    <li>INSTAGRAM</li>
+                </a>
+                <a href="#">
+                    <li>FACEBOOK</li>
+                </a>
+                <a href="#">
+                    <li>TELEGRAM</li>
+                </a>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        generateHotels();
+    </script>
 </body>
 
 
