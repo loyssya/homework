@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HW3</title>
+</head>
+
+<body>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            /* align-items: flex-end; */
+
+
+        }
+
+        div input {
+            height: 45px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        body {
+            display: flex;
+
+        }
+
+        article {
+            width: 80%;
+        }
+    </style>
+    <div>
+        <input type="number" id="value1" placeholder="Поле 1">
+        <input type="number" id="value2" placeholder="Поле 2">
+        <input type="button" id="root" value="&#8730;">
+        <input type="button" id="divisor" value="divisor">
+        <input type="button" id="npr" value="npr">
+        <input type="button" id="power" value="x^y">
+        <input type="button" id="deletes" value="C">
+        <input type="text" id="result" placeholder="Результат" disabled>
+    </div>
+    <article>
+        Примечание
+        <hr>
+        <b>&#8730; </b> - это корень.
+        <br>
+        Для того чтобы произвести вычисление:
+        <br>
+        Поле 1: введите число из которого хотите вычислить корень;
+        <br>
+        Поле 2: введите степень корня;
+        <br>
+        Нажмите на кнопку корня для вычисления.
+        <br>
+        Вы увидите результат в поле "Результат".
+        <hr>
+        <b>divisor</b> - это наибольший общий делитель.
+        <br>
+        Для того чтобы произвести вычисление:
+        <br>
+        Поле 1: введите первое число;
+        <br>
+        Поле 2: введите второе число;
+        <br>
+        Нажмите на divisor для вычисления.
+        <br>
+        Вы увидите наибольший общий делитель в поле "Результат".
+        <hr>
+        <b>npr</b> - это комбинаторика. Число размещений из n элементов по m.
+        <img src="../imgHtml/6.jpg" alt="com">
+        <br>
+        Для того чтобы произвести вычисление:
+        <br>
+        Поле 1: введите число n;
+        <br>
+        Поле 2: введите число m;
+        <br>
+        Нажмите на npr для вычисления.
+        <br>
+        Вы увидите результат вычислений в поле "Результат".
+        <hr>
+        <b>x^y </b>- это степень числа.
+        <br>
+        Для того чтобы произвести вычисление:
+        <br>
+        Поле 1: введите число которое вы хотите возвести в степень;
+        <br>
+        Поле 2: введите степень в которую вы хотите возвести число;
+        <br>
+        Нажмите на x^y для вычисления.
+        <br>
+        Вы увидите результат вычислений в поле "Результат".
+        <hr>
+        <b>C</b> - это удаления всего из полей.
+        <hr>
+
+
+
+    </article>
+
+
+</body>
+<script>
+    let value1 = document.getElementById("value1");
+    let value2 = document.getElementById("value2");
+    let result = document.getElementById("result");
+    let npr = document.getElementById("npr");
+    let power = document.getElementById("power");
+    let root = document.getElementById("root");
+    let divisor = document.getElementById("divisor");
+    let deletes = document.getElementById("deletes");
+    root.onclick = function () {
+        let worker = new Worker("workerRoot.js");
+        worker.postMessage([value1.value, value2.value]);
+        worker.onmessage = function (e) {
+            result.value = e.data;
+
+        }
+    }
+    power.onclick = function () {
+        let worker = new Worker("workerPower.js");
+        worker.postMessage([value1.value, value2.value]);
+        worker.onmessage = function (e) {
+            result.value = e.data;
+
+        }
+    }
+    divisor.onclick = function () {
+        let worker = new Worker("workerDivisor.js");
+        worker.postMessage([value1.value, value2.value]);
+        worker.onmessage = function (e) {
+            result.value = e.data;
+
+        }
+    }
+    npr.onclick = function () {
+        let worker = new Worker("workerNpr.js");
+        worker.postMessage([value1.value, value2.value]);
+        worker.onmessage = function (e) {
+            result.value = e.data;
+            console.log(e.data);
+        }
+    }
+    deletes.onclick = function () {
+        result.value = " ";
+        value1.value = " ";
+        value2.value = " ";
+    }
+
+
+
+
+</script>
+
+
+</html>
