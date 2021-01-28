@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HW4_1</title>
+</head>
+
+<body>
+    <style>
+
+    </style>
+
+    <img src="../imgHtml/BANKHOTELmin.jpg" alt="1">
+    <img src="../imgHtml/GrandHotelmin.jpg" alt="2">
+    <img src="../imgHtml/MarionSpamin.jpg" alt="3">
+    <img src="../imgHtml/NEMOHotelmin.jpg" alt="4">
+</body>
+<script>
+    let img = document.getElementsByTagName("img");
+
+
+    const min = [
+        "../imgHtml/BANKHOTEL.jpg",
+        "../imgHtml/GrandHotelLvivLuxury&Spa.jpg",
+        "../imgHtml/MarionSpa.jpg",
+        "../imgHtml/NEMOHotelResort&SPA.jpg"
+    ];
+    for (let i = 0; i < img.length; i++) {
+        img[i].onclick = function preview() {
+            const imgOld = img[i].src;
+            img[i].src = min[i];
+            min[i] = imgOld;
+        }
+    }
+</script>
+
+</html>
