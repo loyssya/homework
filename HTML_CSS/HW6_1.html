@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HW6_1</title>
+</head>
+
+<body>
+    <style>
+        Menu {
+            display: flex;
+        }
+
+        .div {
+            width: 150px;
+            
+        }
+        .div a{
+            text-decoration: none;
+            color: gray;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .submenu{
+            transform: scaleY(0);
+            transition: 1s;
+            transform-origin: top;
+        }
+        .div:hover > .submenu {
+            transform: scaleY(1);
+        }
+    </style>
+    <Menu>
+        <div class="div"><a href="#">Menu1</a>
+            <div class="submenu">
+                <li>Menu11</li>
+                <li>Menu12</li>
+                <li>Menu13</li>
+            </div>
+        </div>
+        <div class="div"> <a href="#">Menu2</a>
+            <div class="submenu">
+                <li>Menu21</li>
+                <li>Menu22</li>
+                <li>Menu23</li>
+            </div>
+        </div>
+        <div class="div"><a href="#">Menu3</a>
+            <div class="submenu">
+                <li>Menu31</li>
+                <li>Menu32</li>
+                <li>Menu33</li>
+            </div>
+        </div>
+        <div class="div"><a href="#">Menu4</a>
+            <div class="submenu">
+                <li>Menu41</li>
+                <li>Menu42</li>
+                <li>Menu43</li>
+            </div>
+        </div>
+
+    </Menu>
+</body>
+
+</html>

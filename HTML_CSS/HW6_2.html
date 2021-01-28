@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HW6_2</title>
+</head>
+
+<body>
+    <style>
+        #map {
+            background-image: url(../imgHtml/ukraine.png);
+            width: 1360px;
+            height: 1000px;
+        }
+
+        .circle {
+
+            background-color: red;
+            border-radius: 50%;
+            height: 15px;
+            width: 15px;
+            animation: pulsation 1s linear;
+            animation-iteration-count: infinite;
+
+        }
+
+        .circle:hover {
+            animation-play-state: paused;
+
+        }
+
+        button {
+            transform: scaleY(0);
+
+        }
+
+        #Kyiv:hover>button,
+        #Lviv:hover>button,
+        #Dnipro:hover>button,
+        #Odessa:hover>button {
+            transform: scaleY(1);
+
+        }
+
+        #Kyiv,
+        #Lviv,
+        #Dnipro,
+        #Odessa {
+            position: absolute;
+        }
+
+        #Kyiv {
+            margin: 253px 0 0 630px;
+        }
+        #Lviv{
+            margin: 295px 0 0 215px;
+        }
+        #Dnipro{
+            margin: 454px 0 0 977px;
+        }
+        #Odessa{
+            margin: 688px 0 0 657px;
+        }
+        @keyframes pulsation {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <div id="map">
+        <div id="Kyiv">Киев <div class="circle"></div>
+            <button>Купить билет</button>
+        </div>
+        <div id="Lviv">Львов<div class="circle"></div>
+            <button>Купить билет</button>
+        </div>
+        <div id="Dnipro">Днепр<div class="circle"></div>
+            <button>Купить билет</button>
+        </div>
+        <div id="Odessa">Одесса<div class="circle"></div>
+            <button>Купить билет</button>
+        </div>
+    </div>
+</body>
+
+</html>
