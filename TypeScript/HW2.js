@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -12,7 +11,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Car = (function () {
+var Car = /** @class */ (function () {
     function Car(brand) {
         this.brand = brand;
         this.speed = 0;
@@ -23,7 +22,7 @@ var Car = (function () {
     }
     return Car;
 }());
-var Porsche = (function (_super) {
+var Porsche = /** @class */ (function (_super) {
     __extends(Porsche, _super);
     function Porsche(id) {
         var _this = _super.call(this, "Porsche") || this;
@@ -60,7 +59,7 @@ var Porsche = (function (_super) {
     };
     return Porsche;
 }(Car));
-var Tesla = (function (_super) {
+var Tesla = /** @class */ (function (_super) {
     __extends(Tesla, _super);
     function Tesla(id) {
         var _this = _super.call(this, "Tesla") || this;
@@ -97,7 +96,7 @@ var Tesla = (function (_super) {
     };
     return Tesla;
 }(Car));
-var Ford = (function (_super) {
+var Ford = /** @class */ (function (_super) {
     __extends(Ford, _super);
     function Ford(id) {
         var _this = _super.call(this, "Ford") || this;

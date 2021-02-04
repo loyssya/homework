@@ -7,7 +7,7 @@ interface Tires {
 abstract class Car {
     protected speed: number = 0;
     protected maxSpeed: number = 0;
-    protected colorCar: string = "";
+    public colorCar: string = "";
     protected doors: number = 0;
     private wheels: number = 4;
     constructor(protected brand: string) {
