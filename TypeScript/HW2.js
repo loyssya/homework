@@ -1,18 +1,6 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var Car = /** @class */ (function () {
-    function Car(brand) {
+"use strict";
+class Car {
+    constructor(brand) {
         this.brand = brand;
         this.speed = 0;
         this.maxSpeed = 0;
@@ -20,35 +8,32 @@ var Car = /** @class */ (function () {
         this.doors = 0;
         this.wheels = 4;
     }
-    return Car;
-}());
-var Porsche = /** @class */ (function (_super) {
-    __extends(Porsche, _super);
-    function Porsche(id) {
-        var _this = _super.call(this, "Porsche") || this;
-        _this.id = id;
-        _this.summerTires = true;
-        _this.winterTires = false;
-        _this.maxSpeed = 200;
-        _this.colorCar = "blue";
-        _this.doors = 4;
-        return _this;
+}
+class Porsche extends Car {
+    constructor(id) {
+        super("Porsche");
+        this.id = id;
+        this.summerTires = true;
+        this.winterTires = false;
+        this.maxSpeed = 200;
+        this.colorCar = "blue";
+        this.doors = 4;
     }
-    Porsche.prototype.speedCar = function () {
+    speedCar() {
         if (this.speed == this.maxSpeed) {
             console.log("This is the maximum speed. You cannot go faster.");
         }
         else {
             this.speed += 5;
         }
-    };
-    Porsche.prototype.brakingCar = function () {
+    }
+    brakingCar() {
         this.speed -= 5;
         if (this.speed == 0) {
             console.log("This is the minimum speed. You stopped.");
         }
-    };
-    Porsche.prototype.descriptionCar = function () {
+    }
+    descriptionCar() {
         document.write("Car brand: " + this.brand + "<br>");
         document.write("Code car: " + this.id + "<br>");
         document.write("Maximum speed: " + this.maxSpeed + "km / h" + "<br>");
@@ -56,36 +41,33 @@ var Porsche = /** @class */ (function (_super) {
         document.write("Winter tires: " + this.winterTires + "<br>");
         document.write("Color car: " + this.colorCar + "<br>");
         document.write("Number of car doors: " + this.doors + "<br>");
-    };
-    return Porsche;
-}(Car));
-var Tesla = /** @class */ (function (_super) {
-    __extends(Tesla, _super);
-    function Tesla(id) {
-        var _this = _super.call(this, "Tesla") || this;
-        _this.id = id;
-        _this.summerTires = false;
-        _this.winterTires = true;
-        _this.maxSpeed = 250;
-        _this.colorCar = "green";
-        _this.doors = 5;
-        return _this;
     }
-    Tesla.prototype.speedCar = function () {
+}
+class Tesla extends Car {
+    constructor(id) {
+        super("Tesla");
+        this.id = id;
+        this.summerTires = false;
+        this.winterTires = true;
+        this.maxSpeed = 250;
+        this.colorCar = "green";
+        this.doors = 5;
+    }
+    speedCar() {
         if (this.speed == this.maxSpeed) {
             console.log("This is the maximum speed. You cannot go faster.");
         }
         else {
             this.speed += 15;
         }
-    };
-    Tesla.prototype.brakingCar = function () {
+    }
+    brakingCar() {
         this.speed -= 15;
         if (this.speed == 0) {
             console.log("This is the minimum speed. You stopped.");
         }
-    };
-    Tesla.prototype.descriptionCar = function () {
+    }
+    descriptionCar() {
         document.write("<br>" + "Car brand: " + this.brand + "<br>");
         document.write("Code car: " + this.id + "<br>");
         document.write("Maximum speed: " + this.maxSpeed + "km / h" + "<br>");
@@ -93,36 +75,33 @@ var Tesla = /** @class */ (function (_super) {
         document.write("Winter tires: " + this.winterTires + "<br>");
         document.write("Color car: " + this.colorCar + "<br>");
         document.write("Number of car doors: " + this.doors + "<br>");
-    };
-    return Tesla;
-}(Car));
-var Ford = /** @class */ (function (_super) {
-    __extends(Ford, _super);
-    function Ford(id) {
-        var _this = _super.call(this, "Ford") || this;
-        _this.id = id;
-        _this.summerTires = true;
-        _this.winterTires = false;
-        _this.maxSpeed = 150;
-        _this.colorCar = "red";
-        _this.doors = 4;
-        return _this;
     }
-    Ford.prototype.speedCar = function () {
+}
+class Ford extends Car {
+    constructor(id) {
+        super("Ford");
+        this.id = id;
+        this.summerTires = true;
+        this.winterTires = false;
+        this.maxSpeed = 150;
+        this.colorCar = "red";
+        this.doors = 4;
+    }
+    speedCar() {
         if (this.speed == this.maxSpeed) {
             console.log("This is the maximum speed. You cannot go faster.");
         }
         else {
             this.speed += 10;
         }
-    };
-    Ford.prototype.brakingCar = function () {
+    }
+    brakingCar() {
         this.speed -= 10;
         if (this.speed == 0) {
             console.log("This is the minimum speed. You stopped.");
         }
-    };
-    Ford.prototype.descriptionCar = function () {
+    }
+    descriptionCar() {
         document.write("<br>" + "Car brand: " + this.brand + "<br>");
         document.write("Code car: " + this.id + "<br>");
         document.write("Maximum speed: " + this.maxSpeed + "km / h" + "<br>");
@@ -130,15 +109,14 @@ var Ford = /** @class */ (function (_super) {
         document.write("Winter tires: " + this.winterTires + "<br>");
         document.write("Color car: " + this.colorCar + "<br>");
         document.write("Number of car doors: " + this.doors + "<br>");
-    };
-    return Ford;
-}(Car));
-var carPorsche1 = new Porsche(1254);
-var carPorsche2 = new Porsche(5685);
-var carTesla1 = new Tesla(585858);
-var carTesla2 = new Tesla(656955);
-var carFord1 = new Ford(357894);
-var carFord2 = new Ford(251506);
+    }
+}
+let carPorsche1 = new Porsche(1254);
+let carPorsche2 = new Porsche(5685);
+let carTesla1 = new Tesla(585858);
+let carTesla2 = new Tesla(656955);
+let carFord1 = new Ford(357894);
+let carFord2 = new Ford(251506);
 carPorsche1.speedCar();
 carPorsche1.brakingCar();
 carPorsche2.descriptionCar();

@@ -1,5 +1,5 @@
 "use strict";
-var inputs = prompt("What kind of ice cream do you want?" +
+let inputs = prompt("What kind of ice cream do you want?" +
     "\nPlease write the size of ice cream: " +
     "\n*Small($ 10);" +
     "\n*Big($ 25)." +
@@ -9,8 +9,8 @@ var inputs = prompt("What kind of ice cream do you want?" +
     "\n*Berries (+ $ 10)." +
     "\nAdditionally, you can choose:" +
     "\n*Marshmallows (+ $ 5).") || "";
-var order = (inputs === null || inputs === void 0 ? void 0 : inputs.match(/(big|caramel|small|chocolate|caramel|berries|marshmallows)/gmi)) || [];
-var orderEnum = [];
+let order = (inputs === null || inputs === void 0 ? void 0 : inputs.match(/(big|caramel|small|chocolate|caramel|berries|marshmallows)/gmi)) || [];
+let orderEnum = [];
 console.log(order);
 var Components;
 (function (Components) {
@@ -23,8 +23,8 @@ var Components;
 })(Components || (Components = {}));
 ;
 console.log(Components);
-for (var i = 0; i < order.length; i++) {
-    for (var j = 0; j < 6; j++)
+for (let i = 0; i < order.length; i++) {
+    for (let j = 0; j < 6; j++)
         if (order[i].toLowerCase() == Components[j].toLowerCase()) {
             orderEnum.push(j);
         }
@@ -35,7 +35,7 @@ if (orderEnum.indexOf(0) == -1 && orderEnum.indexOf(1) == -1 || (orderEnum.index
     location.reload();
 }
 console.log(orderEnum);
-var count = 0;
+let count = 0;
 orderEnum.forEach(function (components) {
     switch (components) {
         case Components.Big:
