@@ -1,0 +1,12 @@
+ .weather{
+     display: flex;     
+     width: 400px;
+     background-color: lightblue;
+ }
+ .weather > div{
+     flex: 1;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+ }
